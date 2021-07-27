@@ -21,7 +21,7 @@
         <div class="container flex items-center justify-between">
             <!-- logo -->
             <a href="#" class="block w-32">
-                <img src="{{ ('images/logo.svg') }}" alt="logo" class="w-full">
+                <img src="{{asset ('images/logo.svg') }}" alt="logo" class="w-full">
             </a>
             <!-- logo end -->
 
@@ -59,12 +59,115 @@
                     </div>
                     <div class="text-xs leading-3">Cart</div>
                 </a>
-                <a href="account.html" class="block text-center text-gray-700 hover:text-primary transition">
+
+                @if(Route::has('login'))
+                @auth
+                @if(Auth::user()->utype==='ADM')
+                <div class="flex items-center cursor-pointer group relative ">
+                    <ul>
+                        <li>
+                            <div class="text-2xl">
+                                <i class="far fa-user"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text-xs leading-3">Admin</div>
+                            <div
+                                class="absolute left-0 top-full w-full bg-white shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('admin.dashboard')}}"
+                                            class="block  text-gray-700 hover:text-primary transition">
+                                            <span class="text-xs leading-3"><b>Dasboard</b></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            class="block  text-gray-700 hover:text-primary transition">
+                                            <span class="text-xs leading-3"><b>Logout</b></span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                @elseif(Auth::user()->utype==='SVP')
+                <div class="flex items-center cursor-pointer group relative ">
+                    <ul>
+                        <li>
+                            <div class="text-2xl">
+                                <i class="far fa-user"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text-xs leading-3">Provider</div>
+                            <div
+                                class="absolute left-0 top-full w-full bg-white shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('provider.dashboard')}}"
+                                            class="block  text-gray-700 hover:text-primary transition">
+                                            <span class="text-xs leading-3"><b>Dasboard</b></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('logout')}}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            class="block  text-gray-700 hover:text-primary transition">
+                                            <span class="text-xs leading-3"><b>Logout</b></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                @else
+                <div class="flex items-center cursor-pointer group relative ">
+                    <ul>
+                        <li>
+                            <div class="text-2xl text-center">
+                                <i class="far fa-user"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="text-xs leading-3">Customer</div>
+                            <div
+                                class="absolute left-0 top-full w-full  shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('customer.dashboard')}}"
+                                            class="block  text-red-700 hover:text-primary transition">
+                                            <span class="text-xs leading-3"><b>Dasboard</b></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('logout')}}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            class="block  text-red-700 hover:text-primary transition">
+                                            <span class="text-xs leading-3"><b>Logout</b></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                @endif
+                <form id="logout-form" method="POST" action="{{route('logout')}}" style="display: none">
+                    @csrf
+                </form>
+                @else
+                <a href="{{route('login')}}" class="block text-center text-gray-700 hover:text-primary transition">
                     <div class="text-2xl">
                         <i class="far fa-user"></i>
                     </div>
                     <div class="text-xs leading-3">Account</div>
                 </a>
+                @endif
+                @endif
             </div>
             <!-- navicons end -->
 
@@ -84,40 +187,41 @@
                     </span>
                     <span class="capitalize ml-2 text-white">All categories</span>
 
-                    <div class="absolute left-0 top-full w-full bg-white shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
+                    <div
+                        class="absolute left-0 top-full w-full bg-white shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
                         <!-- single category -->
                         <a href="#" class="px-6 py-3 flex items-center hover:bg-gray-100 transition">
-                            <img src="{{ ('images/icons/bed.svg') }}" class="w-5 h-5 object-contain">
+                            <img src="{{asset ('images/icons/bed.svg') }}" class="w-5 h-5 object-contain">
                             <span class="ml-6 text-gray-600 text-sm">Bedroom</span>
                         </a>
                         <!-- single category end -->
                         <!-- single category -->
                         <a href="#" class="px-6 py-3 flex items-center hover:bg-gray-100 transition">
-                            <img src="{{ ('images/icons/sofa.svg') }}" class="w-5 h-5 object-contain">
+                            <img src="{{asset ('images/icons/sofa.svg') }}" class="w-5 h-5 object-contain">
                             <span class="ml-6 text-gray-600 text-sm">Sofa</span>
                         </a>
                         <!-- single category end -->
                         <!-- single category -->
                         <a href="#" class="px-6 py-3 flex items-center hover:bg-gray-100 transition">
-                            <img src="{{ ('images/icons/office.svg') }}" class="w-5 h-5 object-contain">
+                            <img src="{{asset ('images/icons/office.svg') }}" class="w-5 h-5 object-contain">
                             <span class="ml-6 text-gray-600 text-sm">Office</span>
                         </a>
                         <!-- single category end -->
                         <!-- single category -->
                         <a href="#" class="px-6 py-3 flex items-center hover:bg-gray-100 transition">
-                            <img src="{{ ('images/icons/terrace.svg') }}" class="w-5 h-5 object-contain">
+                            <img src="{{asset ('images/icons/terrace.svg') }}" class="w-5 h-5 object-contain">
                             <span class="ml-6 text-gray-600 text-sm">Outdoor</span>
                         </a>
                         <!-- single category end -->
                         <!-- single category -->
                         <a href="#" class="px-6 py-3 flex items-center hover:bg-gray-100 transition">
-                            <img src="{{ ('images/icons/bed-2.svg') }}" class="w-5 h-5 object-contain">
+                            <img src="{{asset ('images/icons/bed-2.svg') }}" class="w-5 h-5 object-contain">
                             <span class="ml-6 text-gray-600 text-sm">Mattress</span>
                         </a>
                         <!-- single category end -->
                         <!-- single category -->
                         <a href="#" class="px-6 py-3 flex items-center hover:bg-gray-100 transition">
-                            <img src="{{ ('images/icons/restaurant.svg') }}" class="w-5 h-5 object-contain">
+                            <img src="{{asset ('images/icons/restaurant.svg') }}" class="w-5 h-5 object-contain">
                             <span class="ml-6 text-gray-600 text-sm">Sofa</span>
                         </a>
                         <!-- single category end -->
@@ -133,9 +237,6 @@
                         <a href="#" class="text-gray-200 hover:text-white transition">About us</a>
                         <a href="#" class="text-gray-200 hover:text-white transition">Contact us</a>
                     </div>
-                    <a href="login.html" class="ml-auto justify-self-end text-gray-200 hover:text-white transition">
-                        Login/Register
-                    </a>
                 </div>
                 <!-- nav menu end -->
 
@@ -179,8 +280,7 @@
     <!-- mobile sidebar menu -->
     <div class="fixed left-0 top-0 w-full h-full z-50 bg-black bg-opacity-30 shadow hidden" id="mobileMenu">
         <div class="absolute left-0 top-0 w-72 h-full z-50 bg-white shadow">
-            <div id="closeMenu"
-                class="text-gray-400 hover:text-primary text-lg absolute right-3 top-3 cursor-pointer">
+            <div id="closeMenu" class="text-gray-400 hover:text-primary text-lg absolute right-3 top-3 cursor-pointer">
                 <i class="fas fa-times"></i>
             </div>
             <!-- navlink -->
@@ -195,9 +295,9 @@
                 <a href="#" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
                     About Us
                 </a>
-                <roa href="#" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
+                <a href="#" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
                     Contact Us
-                </roa>
+                </a>
             </div>
             <!-- navlinks end -->
         </div>
@@ -210,7 +310,7 @@
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
                 <!-- footer text -->
                 <div class="space-y-8 xl:col-span-1">
-                    <img class="w-30" src="{{ ('images/logo.svg') }}" alt="Company name">
+                    <img class="w-30" src="{{asset ('images/logo.svg') }}" alt="Company name">
                     <p class="text-gray-500 text-base">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facere rem
                     </p>
@@ -324,7 +424,7 @@
         <div class="container flex items-center justify-between">
             <p class="text-white">© RAFCART - All Rights Reserved</p>
             <div>
-                <img src="{{ ('images/methods.png') }}" class="h-5">
+                <img src="{{asset ('images/methods.png') }}" class="h-5">
             </div>
         </div>
     </div>
@@ -334,13 +434,14 @@
         let mobileMenu = document.querySelector('#mobileMenu')
         let closeMenu = document.querySelector('#closeMenu')
 
-        menuBar.addEventListener('click', function(){
+        menuBar.addEventListener('click', function () {
             mobileMenu.classList.remove('hidden')
         })
 
-        closeMenu.addEventListener('click', function(){
+        closeMenu.addEventListener('click', function () {
             mobileMenu.classList.add('hidden')
         })
+
     </script>
     @livewireScripts
 </body>
