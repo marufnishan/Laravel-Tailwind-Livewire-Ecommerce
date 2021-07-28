@@ -20,8 +20,8 @@
     <header class="py-4 shadow-sm bg-pink-100 lg:bg-white">
         <div class="container flex items-center justify-between">
             <!-- logo -->
-            <a href="#" class="block w-32">
-                <img src="{{asset ('images/logo.svg') }}" alt="logo" class="w-full">
+            <a href="/" class="block w-32">
+                <img src="{{asset ('images/logo2.png') }}" alt="logo" class="w-full">
             </a>
             <!-- logo end -->
 
@@ -66,24 +66,24 @@
                 <div class="flex items-center cursor-pointer group relative ">
                     <ul>
                         <li>
-                            <div class="text-2xl">
+                            <div class="text-2xl text-center">
                                 <i class="far fa-user"></i>
                             </div>
                         </li>
                         <li>
-                            <div class="text-xs leading-3">Admin</div>
+                            <div class="text-xs leading-3">Acount(Admin)</div>
                             <div
-                                class="absolute left-0 top-full w-full bg-white shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
+                                class="absolute left-0 top-full w-full  shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
                                 <ul>
                                     <li>
                                         <a href="{{route('admin.dashboard')}}"
-                                            class="block  text-gray-700 hover:text-primary transition">
+                                            class="block  text-red-700 hover:text-primary transition">
                                             <span class="text-xs leading-3"><b>Dasboard</b></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                            class="block  text-gray-700 hover:text-primary transition">
+                                            class="block  text-red-700 hover:text-primary transition">
                                             <span class="text-xs leading-3"><b>Logout</b></span>
                                         </a>
                                     </li>
@@ -97,25 +97,25 @@
                 <div class="flex items-center cursor-pointer group relative ">
                     <ul>
                         <li>
-                            <div class="text-2xl">
+                            <div class="text-2xl text-center">
                                 <i class="far fa-user"></i>
                             </div>
                         </li>
                         <li>
                             <div class="text-xs leading-3">Provider</div>
                             <div
-                                class="absolute left-0 top-full w-full bg-white shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
+                                class="absolute left-0 top-full w-full  shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
                                 <ul>
                                     <li>
                                         <a href="{{route('provider.dashboard')}}"
-                                            class="block  text-gray-700 hover:text-primary transition">
+                                            class="block  text-red-700 hover:text-primary transition">
                                             <span class="text-xs leading-3"><b>Dasboard</b></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="{{route('logout')}}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                            class="block  text-gray-700 hover:text-primary transition">
+                                            class="block  text-red-700 hover:text-primary transition">
                                             <span class="text-xs leading-3"><b>Logout</b></span>
                                         </a>
                                     </li>
@@ -232,8 +232,10 @@
                 <!-- nav menu -->
                 <div class="flex items-center justify-between flex-grow pl-12">
                     <div class="flex items-center space-x-6 text-base capitalize">
-                        <a href="index.html" class="text-gray-200 hover:text-white transition">Home</a>
-                        <a href="shop.html" class="text-gray-200 hover:text-white transition">Shop</a>
+                        <a href="/" class="text-gray-200 hover:text-white transition">Home</a>
+                        <a href="/shop" class="text-gray-200 hover:text-white transition">Shop</a>
+                        <a href="/cart" class="text-gray-200 hover:text-white transition">CART</a>
+                        <a href="/checkout" class="text-gray-200 hover:text-white transition">CHECKOUT</a>
                         <a href="#" class="text-gray-200 hover:text-white transition">About us</a>
                         <a href="#" class="text-gray-200 hover:text-white transition">Contact us</a>
                     </div>
@@ -266,7 +268,7 @@
             </div>
             <div class="text-xs leading-3">Search</div>
         </a>
-        <a href="cart.html" class="text-center text-gray-700 hover:text-primary transition relative">
+        <a href="/cart" class="text-center text-gray-700 hover:text-primary transition relative">
             <span
                 class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">3</span>
             <div class="text-2xl">
@@ -286,10 +288,10 @@
             <!-- navlink -->
             <h3 class="text-xl font-semibold text-gray-700 mb-1 font-roboto pl-4 pt-4">Menu</h3>
             <div class="">
-                <a href="index.html" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
+                <a href="/" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
                     Home
                 </a>
-                <a href="shop.html" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
+                <a href="/shop" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
                     Shop
                 </a>
                 <a href="#" class="block px-4 py-2 font-medium transition hover:bg-gray-100">
@@ -310,9 +312,9 @@
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
                 <!-- footer text -->
                 <div class="space-y-8 xl:col-span-1">
-                    <img class="w-30" src="{{asset ('images/logo.svg') }}" alt="Company name">
+                    <img class="block w-32" src="{{asset ('images/logo2.png') }}" alt="Company name">
                     <p class="text-gray-500 text-base">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facere rem
+                        Ashulia – Saver Dhaka, Bangladesh <br> 01718863771
                     </p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-gray-500">
@@ -422,7 +424,7 @@
     <!-- copyright -->
     <div class="bg-gray-800 py-4">
         <div class="container flex items-center justify-between">
-            <p class="text-white">© RAFCART - All Rights Reserved</p>
+            <p class="text-white">© Nishan - All Rights Reserved</p>
             <div>
                 <img src="{{asset ('images/methods.png') }}" class="h-5">
             </div>
