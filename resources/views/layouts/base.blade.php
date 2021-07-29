@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Ecommerce</title>
+    <title>E-commerce</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -71,7 +71,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="text-xs leading-3">Acount(Admin)</div>
+                            <div class="text-xs leading-3">Admin <span class="text-xm text-primary text-center"> <i class="fas fa-chevron-down"></i> </span></div>
                             <div
                                 class="absolute left-0 top-full w-full  shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
                                 <ul>
@@ -102,7 +102,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="text-xs leading-3">Provider</div>
+                            <div class="text-xs leading-3">Provider <span class="text-xm text-primary text-center"> <i class="fas fa-chevron-down"></i> </span></div>
                             <div
                                 class="absolute left-0 top-full w-full  shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
                                 <ul>
@@ -133,7 +133,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="text-xs leading-3">Customer</div>
+                            <div class="text-xs leading-3">Customer <span class="text-xm text-primary text-center"> <i class="fas fa-chevron-down"></i> </span></div>
                             <div
                                 class="absolute left-0 top-full w-full  shadow-md py-3 invisible opacity-0 group-hover:opacity-100 group-hover:visible transition duration-300 z-50 divide-y divide-gray-300 divide-dashed">
                                 <ul>
