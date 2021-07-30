@@ -157864,3 +157864,22 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
+
+
+
+.wrap-pagination-info {
+  margin-top: 46px;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 10px;
+}
+
+
+
+.wrap-pagination-info .rounded-l-md {
+  margin-right: 5px;
+}
+
+.wrap-pagination-info .rounded-r-md {
+  margin-left: 5px;
+}
+
